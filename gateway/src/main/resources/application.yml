@@ -1,0 +1,38 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: identity-service
+          uri: lb://IDENTITY-SERVICE
+          predicates:
+            - Path=/auth/**
+
+        - id: books-app
+          uri: lb://BOOKS-APP
+          predicates:
+            - Path=/books/**
+          filters:
+            - AuthenticationFilter
+
+        - id: ratings-app
+          uri: lb://RATINGS-APP
+          predicates:
+            - Path=/ratings/**
+          filters:
+            - AuthenticationFilter
+
+
+  application:
+    name: GATEWAY-APP
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.springframework.security: DEBUG

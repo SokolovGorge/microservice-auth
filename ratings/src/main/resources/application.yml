@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: RATINGS-APP
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
+
+client:
+  baseurl: http://localhost:3000
+
+logging:
+  level:
+    org.springframework.security: DEBUG

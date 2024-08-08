@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="books" />
+        <module name="discovery-server" />
+        <module name="identity-service" />
+        <module name="ratings" />
+        <module name="gateway" />
+        <module name="common-module" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="config-server" target="20" />
+      <module name="identy-service" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="books" options="-parameters" />
+      <module name="common-module" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="identity-service" options="-parameters" />
+      <module name="identy-service" options="-parameters" />
+      <module name="ratings" options="-parameters" />
+    </option>
+  </component>
+</project>
